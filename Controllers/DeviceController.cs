@@ -14,13 +14,15 @@ namespace NetworkManagerApi.Controllers
 
         const string _baseUrl = "api/devices";
 
+        const int _delayTimeInMilliseconds = 0;
+
         public DeviceController(DeviceService devicesService) => _devicesService = devicesService;
 
         [HttpGet]
         [Route(_baseUrl + "/all")]
         public JsonResult<object> GetAllDevices()
         {
-            Task.Delay(500).Wait();
+            Task.Delay(_delayTimeInMilliseconds).Wait();
             var result = _devicesService
                 .GetAllDevices()
                 .BiFold<object>(
@@ -35,7 +37,7 @@ namespace NetworkManagerApi.Controllers
         [Route(_baseUrl + "/by-name")]
         public JsonResult<object> GetDevicesByName([FromUri] string deviceName, [FromUri] bool exactMatch)
         {
-            Task.Delay(500).Wait();
+            Task.Delay(_delayTimeInMilliseconds).Wait();
             var result = _devicesService
                 .GetDevicesByName(deviceName, exactMatch)
                 .BiFold<object>(
@@ -50,7 +52,7 @@ namespace NetworkManagerApi.Controllers
         [Route(_baseUrl + "/by-name-paginated")]
         public JsonResult<object> GetDevicesByNamePaginated([FromUri] string deviceName, [FromUri] int offset, [FromUri] int count, [FromUri] bool exactMatch)
         {
-            Task.Delay(500).Wait();
+            Task.Delay(_delayTimeInMilliseconds).Wait();
             var result = _devicesService
                 .GetDevicesByNamePaginated(deviceName, offset, count, exactMatch)
                 .BiFold<object>(
@@ -65,7 +67,7 @@ namespace NetworkManagerApi.Controllers
         [Route(_baseUrl + "/paginated")]
         public JsonResult<object> GetDevicesPaginated([FromUri] int? offset, int? count)
         {
-            Task.Delay(500).Wait();
+            Task.Delay(_delayTimeInMilliseconds).Wait();
             var result = _devicesService
                 .GetDevicesPaginated(offset, count)
                 .BiFold<object>(
@@ -80,7 +82,7 @@ namespace NetworkManagerApi.Controllers
         [Route(_baseUrl + "/add")]
         public JsonResult<object> AddDevice([FromBody] AddDeviceRequest request)
         {
-            Task.Delay(500).Wait();
+            Task.Delay(_delayTimeInMilliseconds).Wait();
             var result = _devicesService
                 .AddDevice(request.Name)
                 .BiFold<object>(
@@ -95,7 +97,7 @@ namespace NetworkManagerApi.Controllers
         [Route(_baseUrl + "/update")]
         public JsonResult<object> UpdateDevice([FromBody] UpdateDeviceRequest request)
         {
-            Task.Delay(500).Wait();
+            Task.Delay(_delayTimeInMilliseconds).Wait();
             var result = _devicesService
                 .UpdateDevice(request.Id, request.Name)
                 .BiFold<object>(
@@ -110,7 +112,7 @@ namespace NetworkManagerApi.Controllers
         [Route(_baseUrl + "/delete")]
         public JsonResult<object> DeleteDevice([FromBody] DeleteDeviceRequest request)
         {
-            Task.Delay(500).Wait();
+            Task.Delay(_delayTimeInMilliseconds).Wait();
             var result = _devicesService
                 .DeleteDevice(request.Id)
                 .BiFold<object>(
@@ -125,7 +127,7 @@ namespace NetworkManagerApi.Controllers
         [Route(_baseUrl + "/device/{id}")]
         public JsonResult<object> GetDeviceById([FromUri] int Id)
         {
-            Task.Delay(500).Wait();
+            Task.Delay(_delayTimeInMilliseconds).Wait();
             var result = _devicesService
                 .GetDeviceById(Id)
                 .BiFold<object>(
@@ -145,7 +147,7 @@ namespace NetworkManagerApi.Controllers
         [Route(_baseUrl + "/count")]
         public JsonResult<object> GetDevicesCount()
         {
-            Task.Delay(500).Wait();
+            Task.Delay(_delayTimeInMilliseconds).Wait();
             var result = _devicesService
                 .GetDevicesCount()
                 .BiFold<object>(
@@ -160,7 +162,7 @@ namespace NetworkManagerApi.Controllers
         [Route(_baseUrl + "/count-by-name")]
         public JsonResult<object> GetDevicesCountByName([FromUri] string deviceName, [FromUri] bool exactMatch)
         {
-            Task.Delay(500).Wait();
+            Task.Delay(_delayTimeInMilliseconds).Wait();
             var result = _devicesService
                 .GetDevicesCountByName(deviceName, exactMatch)
                 .BiFold<object>(
