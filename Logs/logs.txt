@@ -1,0 +1,62 @@
+[8/24/2022 8:20:34 PM][Level: error][Message: Could not find stored procedure 'spCreateDevicesDBIfNotExists'.]
+[8/24/2022 8:35:52 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:35:57 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:38:03 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:38:29 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:39:14 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:39:40 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:39:56 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:41:16 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:42:52 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:43:12 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:43:25 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:49:30 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:50:08 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:50:31 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:51:23 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:51:42 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:52:10 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:52:30 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:53:38 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:54:21 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:54:38 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 8:55:03 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (aaa).
+The statement has been terminated.]
+[8/24/2022 9:00:40 PM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Name'. Cannot insert duplicate key in object 'dbo.Devices'. The duplicate key value is (eee).
+The statement has been terminated.]
+[8/25/2022 6:37:59 AM][Level: error][Message: Could not find stored procedure 'spCreateDevicesTableIfNotExists'.]
+[8/25/2022 6:39:21 AM][Level: error][Message: Could not find stored procedure 'spCreateDevicesTableIfNotExists'.]
+[8/25/2022 8:48:01 AM][Level: error][Message: Specified cast is not valid.]
+[8/25/2022 8:48:18 AM][Level: error][Message: Specified cast is not valid.]
+[8/25/2022 8:48:32 AM][Level: error][Message: Specified cast is not valid.]
+[8/25/2022 8:48:41 AM][Level: error][Message: Specified cast is not valid.]
+[8/25/2022 8:50:18 AM][Level: error][Message: Specified cast is not valid.]
+[8/25/2022 8:51:06 AM][Level: error][Message: Specified cast is not valid.]
+[8/25/2022 8:58:13 AM][Level: error][Message: Specified cast is not valid.]
+[8/25/2022 9:00:04 AM][Level: error][Message: Specified cast is not valid.]
+[8/25/2022 9:00:04 AM][Level: error][Message: Specified cast is not valid.]
+[8/25/2022 9:00:34 AM][Level: error][Message: Specified cast is not valid.]
+[8/25/2022 9:07:17 AM][Level: error][Message: Specified cast is not valid.]
+[8/25/2022 9:56:00 AM][Level: error][Message: Violation of UNIQUE KEY constraint 'AK_Number'. Cannot insert duplicate key in object 'dbo.Ports'. The duplicate key value is (1000).
+The statement has been terminated.]

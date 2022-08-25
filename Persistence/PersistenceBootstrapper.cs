@@ -24,8 +24,11 @@ namespace NetworkManagerApi.Persistence
             using SqlConnection connection = new(_connectionString);
             try
             {
-                // Create the Devices database if it does not exist
-                MSSQLUtils.SpExecuteNonQuery("spCreateDevicesDBIfNotExists", _connectionString, new());
+                // Create the Devices table if it does not exist
+                MSSQLUtils.SpExecuteNonQuery("spCreateDevicesTableIfNotExists", _connectionString, new());
+
+                // Create the Ports table if it does not exist
+                MSSQLUtils.SpExecuteNonQuery("spCreatePortsTableIfNotExists", _connectionString, new());
             }
             catch (Exception e)
             {

@@ -19,6 +19,12 @@ namespace NetworkManagerApi.Repositories
         Either<string, IEnumerable<Device>> GetDevicesByName(string name, bool exactMatch);
 
         /// <summary>
+        /// Gets a list with the ids of all the devices.
+        /// </summary>
+        /// <returns>A list of ids of the devices, if successful, or an error message otherwise</returns>
+        Either<string, IEnumerable<int>> GetDeviceIds();
+
+        /// <summary>
         /// Gets all the devices that have their name equal to the provided name, in a paginated manner.
         /// </summary>
         /// <returns>A (paginated) list of the devices with the provided name, if successful, or an error message otherwise</returns>
@@ -71,6 +77,6 @@ namespace NetworkManagerApi.Repositories
         /// </summary>
         /// <param name="id"></param>
         /// <returns>If successful, the total number of devices, or an error message if an error happens.</returns>
-        Either<string, int> GetDevicesCountByName(string deviceName, bool exactMatch);
+        Either<string, int> GetDevicesCountForName(string deviceName, bool exactMatch);
     }
 }

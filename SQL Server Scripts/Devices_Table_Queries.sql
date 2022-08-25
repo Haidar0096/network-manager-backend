@@ -1,7 +1,7 @@
 -- Procedure to create the Devices DB if it does not exist
-EXEC spDropProcedureIfExists @ProcedureName='spCreateDevicesDBIfNotExists'
+EXEC spDropProcedureIfExists @ProcedureName='spCreateDevicesTableIfNotExists'
 GO
-CREATE PROCEDURE spCreateDevicesDBIfNotExists
+CREATE PROCEDURE spCreateDevicesTableIfNotExists
 AS
 BEGIN
 	-- Only create the table if it does not exist
@@ -10,6 +10,7 @@ BEGIN
 		CREATE TABLE Devices(
 		Id INT PRIMARY KEY IDENTITY(1,1),
 		Name VARCHAR(500) NOT NULL,
+		CONSTRAINT AK_Name UNIQUE(Name)
 		)
 	END
 END
@@ -116,9 +117,9 @@ AS
 GO
 
 -- Procedure to get count of all Devices with certain name
-EXEC spDropProcedureIfExists @ProcedureName='spGetDevicesCountByName'
+EXEC spDropProcedureIfExists @ProcedureName='spGetDevicesCountForName'
 GO
-CREATE PROCEDURE spGetDevicesCountByName @Name VARCHAR(500) , @ExactMatch BIT
+CREATE PROCEDURE spGetDevicesCountForName @Name VARCHAR(500) , @ExactMatch BIT
 AS
 	BEGIN
 		DECLARE @command VARCHAR(1000)

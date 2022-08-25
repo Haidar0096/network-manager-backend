@@ -22,35 +22,40 @@ namespace NetworkManagerApi.Services
             return _devicesRepository.GetDevicesByName(deviceName, exactMatch);
         }
 
-        public Either<string, IEnumerable<Device>> GetDevicesByNamePaginated(string deviceName, int? offset, int? count, bool exactMatch)
+        public Either<string, IEnumerable<int>> GetDeviceIds()
+        {
+            return _devicesRepository.GetDeviceIds();
+        }
+
+        public Either<string, IEnumerable<Device>> GetDevicesByNamePaginated(string deviceName, int offset, int count, bool exactMatch)
         {
             if (deviceName == null)
             {
                 return "The device name cannot be empty";
             }
-            if (offset == null || offset < 0)
+            if (offset < 0)
             {
                 return "The offset cannot be empty or negative";
             }
-            if (count == null || count == 0)
+            if (count == 0)
             {
                 return "The count cannot be empty, zero, or less than zero";
             }
-            return _devicesRepository.GetDevicesByNamePaginated(deviceName, offset ?? default, count ?? default, exactMatch);
+            return _devicesRepository.GetDevicesByNamePaginated(deviceName, offset, count, exactMatch);
         }
 
-        public Either<string, IEnumerable<Device>> GetDevicesPaginated(int? offset, int? count)
+        public Either<string, IEnumerable<Device>> GetDevicesPaginated(int offset, int count)
         {
-            if (offset == null || offset < 0)
+            if (offset < 0)
             {
                 return "The offset cannot be empty or negative";
             }
-            if (count == null || count == 0)
+            if (count == 0)
             {
                 return "The count cannot be empty, zero, or less than zero";
             }
 
-            return _devicesRepository.GetDevicesPaginated(offset ?? default, count ?? default);
+            return _devicesRepository.GetDevicesPaginated(offset, count);
         }
 
         public Either<string, int> AddDevice(string name)
@@ -95,7 +100,7 @@ namespace NetworkManagerApi.Services
 
         public Either<string, int> GetDevicesCount() => _devicesRepository.GetDevicesCount();
 
-        public Either<string, int> GetDevicesCountByName(string deviceName, bool exactMatch) =>
-            _devicesRepository.GetDevicesCountByName(deviceName, exactMatch);
+        public Either<string, int> GetDevicesCountForName(string deviceName, bool exactMatch) =>
+            _devicesRepository.GetDevicesCountForName(deviceName, exactMatch);
     }
 }

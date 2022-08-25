@@ -94,3 +94,15 @@ AS
 		EXEC (@command)
 	END
 GO
+
+-- Procedure to get all rows in a table with a column selected
+EXEC spDropProcedureIfExists @ProcedureName='spGetRowsByColumnName'
+GO
+CREATE PROCEDURE spGetRowsByColumnName @TableName VARCHAR(500), @ColumnName VARCHAR(500)
+AS
+	BEGIN
+		DECLARE @command VARCHAR(1000)
+		SET @command = 'SELECT ' + @ColumnName + ' FROM ' + @TableName 
+		EXEC (@command)
+	END
+GO

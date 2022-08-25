@@ -49,6 +49,21 @@ namespace NetworkManagerApi.Controllers
         }
 
         [HttpGet]
+        [Route(_baseUrl + "/ids")]
+        public JsonResult<object> GetDeviceIds()
+        {
+            Task.Delay(_delayTimeInMilliseconds).Wait();
+            var result = _devicesService
+                .GetDeviceIds()
+                .BiFold<object>(
+                    null,
+                    (_, ids) => ResponseBase<object>.CreateSuccess(ids),
+                    (_, failureMessage) => ResponseBase<object>.CreateFailure<object>(failureMessage)
+                 );
+            return Json(result);
+        }
+
+        [HttpGet]
         [Route(_baseUrl + "/by-name-paginated")]
         public JsonResult<object> GetDevicesByNamePaginated([FromUri] string deviceName, [FromUri] int offset, [FromUri] int count, [FromUri] bool exactMatch)
         {
@@ -65,7 +80,7 @@ namespace NetworkManagerApi.Controllers
 
         [HttpGet]
         [Route(_baseUrl + "/paginated")]
-        public JsonResult<object> GetDevicesPaginated([FromUri] int? offset, int? count)
+        public JsonResult<object> GetDevicesPaginated([FromUri] int offset, int count)
         {
             Task.Delay(_delayTimeInMilliseconds).Wait();
             var result = _devicesService
@@ -159,12 +174,12 @@ namespace NetworkManagerApi.Controllers
         }
 
         [HttpGet]
-        [Route(_baseUrl + "/count-by-name")]
-        public JsonResult<object> GetDevicesCountByName([FromUri] string deviceName, [FromUri] bool exactMatch)
+        [Route(_baseUrl + "/count-for-name")]
+        public JsonResult<object> GetDevicesCountForName([FromUri] string deviceName, [FromUri] bool exactMatch)
         {
             Task.Delay(_delayTimeInMilliseconds).Wait();
             var result = _devicesService
-                .GetDevicesCountByName(deviceName, exactMatch)
+                .GetDevicesCountForName(deviceName, exactMatch)
                 .BiFold<object>(
                     default,
                     (_, count) => ResponseBase<object>.CreateSuccess<object>(count),

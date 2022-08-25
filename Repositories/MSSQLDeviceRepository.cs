@@ -76,6 +76,38 @@ namespace NetworkManagerApi.Repositories
             }
         }
 
+        public Either<string, IEnumerable<int>> GetDeviceIds()
+        {
+            try
+            {
+                var parameters = new List<SqlParameter>()
+                {
+                    new()
+                    {
+                        ParameterName = "@TableName",
+                        Value = "Devices",
+                        Direction = ParameterDirection.Input,
+                        DbType = DbType.String,
+                    },
+                     new()
+                    {
+                        ParameterName = "@ColumnName",
+                        Value = "Id",
+                        Direction = ParameterDirection.Input,
+                        DbType = DbType.String,
+                    },
+                };
+                var ids = MSSQLUtils.SpExecuteReader("spGetRowsByColumnName", _connectionString, parameters, reader => (int)reader["Id"]);
+
+                return ids;
+            }
+            catch (Exception e)
+            {
+                _logger.Log(LogLevel.error, e.Message);
+                return "An error has occurred.";
+            }
+        }
+
         public Either<string, IEnumerable<Device>> GetDevicesByNamePaginated(string name, int offset, int count, bool exactMatch)
         {
             try
@@ -315,11 +347,11 @@ namespace NetworkManagerApi.Repositories
             catch (Exception e)
             {
                 _logger.Log(LogLevel.error, e.Message);
-                return "An error has occurred while fetching the device.";
+                return "An error has occurred.";
             }
         }
 
-        public Either<string, int> GetDevicesCountByName(string deviceName, bool exactMatch)
+        public Either<string, int> GetDevicesCountForName(string deviceName, bool exactMatch)
         {
             try
             {
@@ -342,12 +374,12 @@ namespace NetworkManagerApi.Repositories
                 };
 
 
-                return MSSQLUtils.SpExecuteScalar<int>("spGetDevicesCountByName", _connectionString, parameters);
+                return MSSQLUtils.SpExecuteScalar<int>("spGetDevicesCountForName", _connectionString, parameters);
             }
             catch (Exception e)
             {
                 _logger.Log(LogLevel.error, e.Message);
-                return "An error has occurred while fetching the device.";
+                return "An error has occurred.";
             }
         }
     }

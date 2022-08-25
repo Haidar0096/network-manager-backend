@@ -2,17 +2,17 @@
 {
     public class Device
     {
-        private readonly int id;
-        private readonly string name;
+        private readonly int _Id;
+        private readonly string _Name;
 
         public Device(int id, string name)
         {
-            this.id = id;
-            this.name = name;
+            _Id = id;
+            _Name = name;
         }
 
-        public int Id => id;
+        public int Id => _Id;
 
-        public string Name => name;
+        public string Name => _Name;
     }
 }
