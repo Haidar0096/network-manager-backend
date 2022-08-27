@@ -31,11 +31,17 @@
           <AssociatedConnUserName />
           <FullPath>Global_Queries.sql</FullPath>
         </FileNode>
-        <FileNode Name="Misc_Queries.sql">
+        <FileNode Name="Playground.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:HAIDAR:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>HAIDAR</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>Misc_Queries.sql</FullPath>
+          <FullPath>Playground.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Ports_Table_Queries.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:HAIDAR:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>HAIDAR</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Ports_Table_Queries.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

@@ -1,4 +1,4 @@
--- Procedure to create the Devices DB if it does not exist
+-- Procedure to create the Devices table if it does not exist
 EXEC spDropProcedureIfExists @ProcedureName='spCreateDevicesTableIfNotExists'
 GO
 CREATE PROCEDURE spCreateDevicesTableIfNotExists
@@ -10,7 +10,7 @@ BEGIN
 		CREATE TABLE Devices(
 		Id INT PRIMARY KEY IDENTITY(1,1),
 		Name VARCHAR(500) NOT NULL,
-		CONSTRAINT AK_Name UNIQUE(Name)
+		--CONSTRAINT AK_Name UNIQUE(Name)
 		)
 	END
 END

@@ -12,7 +12,7 @@ go
 DECLARE @i int = 0
 DECLARE @DeviceNumber VARCHAR(5)
 DECLARE @query VARCHAR(1000)
-WHILE @i < 50000
+WHILE @i < 500
 	BEGIN
 		SET @i = @i + 1
 		SET @DeviceNumber = @i
@@ -26,7 +26,7 @@ go
 DECLARE @i int = 0
 DECLARE @DeviceId INT
 DECLARE @MinDeviceId INT = 1
-DECLARE @MaxDeviceId INT = 10000
+DECLARE @MaxDeviceId INT = 500
 DECLARE @query VARCHAR(1000)
 WHILE @i < 100
 	BEGIN
@@ -117,4 +117,8 @@ go
 
 -- Get all rows of a specific column
 exec spGetRowsByColumnName @TableName='Devices', @ColumnName='Id'
+go
+
+-- Update device
+exec spUpdateDevice @Id=2, @Name='Device bla bla'
 go

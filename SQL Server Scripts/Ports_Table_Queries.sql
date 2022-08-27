@@ -1,4 +1,4 @@
--- Procedure to create the Devices DB if it does not exist
+-- Procedure to create the Devices table if it does not exist
 EXEC spDropProcedureIfExists @ProcedureName='spCreatePortsTableIfNotExists'
 GO
 CREATE PROCEDURE spCreatePortsTableIfNotExists
@@ -11,7 +11,7 @@ BEGIN
 		Id INT PRIMARY KEY IDENTITY(1,1),
 		Number INT NOT NULL,
 		DeviceId INT NOT NULL,
-		CONSTRAINT AK_Number UNIQUE(Number),
+		--CONSTRAINT AK_Number UNIQUE(Number),
 		CONSTRAINT FK_Ports_Devices FOREIGN KEY (DeviceId)
 		REFERENCES Devices (Id)
 		ON DELETE CASCADE
